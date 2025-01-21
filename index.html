@@ -92,9 +92,9 @@
         </section>
 
         <section class="section section-2">
-            <div class="file" onclick="downloadFile('file1.pdf')">Archivo 1</div>
-            <div class="file" onclick="downloadFile('file2.pdf')">Archivo 2</div>
-            <div class="file" onclick="downloadFile('file3.pdf')">Archivo 3</div>
+            <div class="file" onclick="openFile('file1.pdf')">Archivo 1</div>
+            <div class="file" onclick="openFile('file2.pdf')">Archivo 2</div>
+            <div class="file" onclick="openFile('file3.pdf')">Archivo 3</div>
         </section>
 
         <section class="section section-3">
@@ -116,13 +116,8 @@
     </footer>
 
     <script>
-        function downloadFile(fileName) {
-            const link = document.createElement('a');
-            link.href = fileName;
-            link.download = fileName;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+        function openFile(fileName) {
+            window.open(fileName, '_blank');
         }
     </script>
 </body>
