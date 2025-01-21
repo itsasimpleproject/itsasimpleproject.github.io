@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'League Spartan', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #5e17eb;
+            background-color: #ffffff;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #5e17eb;
+            color: #ffffff;
+        }
+        header a {
+            text-decoration: none;
+            color: #ffffff;
+            margin: 0 10px;
+            font-weight: 700;
+        }
+        header a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            padding: 40px 20px;
+        }
+        .section-1 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .section-2, .section-4 {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .file {
+            width: 150px;
+            height: 200px;
+            background-color: #5e17eb;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .file:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .section-3 {
+            background-color: #f3f3f3;
+            text-align: center;
+        }
+        .section-3 h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #5e17eb;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>Brand</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="archivos.html">Archivos</a>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <main>
+        <section class="section section-1">
+            Stop Talking,<br>Start a Project
+        </section>
+
+        <section class="section section-2">
+            <div class="file" onclick="downloadFile('file1.pdf')">Archivo 1</div>
+            <div class="file" onclick="downloadFile('file2.pdf')">Archivo 2</div>
+            <div class="file" onclick="downloadFile('file3.pdf')">Archivo 3</div>
+        </section>
+
+        <section class="section section-3">
+            <h2>Título de Sección</h2>
+            <p>Este es un párrafo de ejemplo que proporciona información adicional.</p>
+        </section>
+
+        <section class="section section-4">
+            <div>
+                <h3>Contacto</h3>
+                <p>Email: contacto@example.com</p>
+                <p>Teléfono: +123 456 789</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Brand. Todos los derechos reservados.
+    </footer>
+
+    <script>
+        function downloadFile(fileName) {
+            const link = document.createElement('a');
+            link.href = fileName;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
